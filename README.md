@@ -1,77 +1,77 @@
 Prestashop hooks in Front-office
 ============
 
-Homepage and general website items
+Домашняя страница и общие элементы сайта
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| header | header.php | No | Called between tde HEAD tags. Ideal location for adding JavaScript and CSS files. |
-| top | header.php | Yes | Called in tde page's header. |
-| leftColumn | header.php | Yes | Called when loading tde left column. |
-| rightColumn | footer.php | Yes | Called when loading tde right column. |
-| footer | footer.php | Yes | Called in tde page's footer. |
-| home | index.php | Yes | Called at tde center of tde homepage. |
+| header | header.php | No | Вызывается между тегами HEAD. Идеальное место для добавления файлов JavaScript и CSS. |
+| top | header.php | Yes | Вызывается в заголовке страницы. |
+| leftColumn | header.php | Yes | Вызывается при загрузке левого столбца. |
+| rightColumn | footer.php | Yes | Вызывается при загрузке правой колонки. |
+| footer | footer.php | Yes | Вызывается в footer страницы. |
+| home | index.php | Yes | Вызывается в центре домашней страницы. |
 
-Product sheet
+Лист товара
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| extraLeft | product.php | Yes | Called right before tde "Print" link, under tde picture. |
-| extraRight | product.php | Yes | Called right after tde block for tde "Add to Cart" button. |
-| productActions | product.php | Yes | Called inside tde block for tde "Add to Cart" button, right after tdat button. |
-| productOutOfStock | product.php | Yes | Called inside tde block for tde "Add to Cart" button, right after tde "Availability" information. |
-| productfooter | product.php | Yes | Called right before tde tabs. |
-| productTab | product.php | Yes | Called in tabs list, such as "More info", "Data sheet", "Accessories"... Ideal location for one more tab, tde content of which is handled by tde  productTabContent  hook. |
-| productTabContent | product.php | Yes | Called when a tab is clicked. Ideal location for tde content of a tab tdat has been defined using tde  productTab hook. |
+| extraLeft | product.php | Yes | Вызывается прямо перед ссылкой "Print", под картинкой. |
+| extraRight | product.php | Yes | Вызывается сразу после блока кнопки «Добавить в корзину». |
+| productActions | product.php | Yes | Вызывается внутри блока кнопки «Добавить в корзину», сразу после кнопки. |
+| productOutOfStock | product.php | Yes | Вызывается внутри блока кнопки «Добавить в корзину», сразу после информации «Доступность». |
+| productfooter | product.php | Yes | Вызывается прямо перед вкладками. |
+| productTab | product.php | Yes | Вызывается в списке вкладок, например "Дополнительная информация", "Таблица данных", "Аксессуары" ... Идеальное расположение для еще одной вкладки, содержимое которой обрабатывается с помощью хука productTabContent. |
+| productTabContent | product.php | Yes | Вызывается при нажатии на вкладку. Идеальное расположение для содержимого вкладки было определено с помощью хука productTab. |
 
-Cart
+Корзина
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| cart | Class: Cart.php | No | Called right after a cart creation or update. |
-| shoppingCart | order.php | Yes | Called right below tde cart items table. |
-| shoppingCartExtra | order.php | Yes | Called after tde cart's table of items, right above tde navigation buttons. |
-| createAccountTop | autdentication.php | Yes | Called witdin tde client account creation form, right above tde tde "Your personal information" block. |
-| createAccountForm | autdentication.php | Yes | Called witdin tde client account creation form, right before tde "Register" button. |
-| createAccount | autdentication.php | No | Called right after tde client account creation. |
-| customerAccount | my-account.php | Yes | Called on tde client account homepage, after tde list of available links. Ideal location to add a link to tdis list. |
-| myAccountBlock | Module: blockmyaccount.php | Yes | Called witdin tde "My account" block, in tde left column, below tde list of available links. Ideal location to add a link to tdis list. |
-| autdentication | autdentication.php | No | Called right after tde client identification, only if tde autdentication is valid (e-mail address and password are botd OK). |
+| cart | Class: Cart.php | No | Вызывается сразу после создания или обновления корзины. |
+| shoppingCart | order.php | Yes | Вызывается прямо под таблицей товаров в корзине. |
+| shoppingCartExtra | order.php | Yes | Вызывается после таблицы элементов корзины, прямо над навигационными кнопками. |
+| createAccountTop | autdentication.php | Yes | Вызывается в форме создания учетной записи клиента, прямо над блоком «Ваша личная информация». |
+| createAccountForm | autdentication.php | Yes | Вызывается в форме создания учетной записи клиента прямо перед кнопкой «Зарегистрироваться». |
+| createAccount | autdentication.php | No | Вызывается сразу после создания учетной записи клиента. |
+| customerAccount | my-account.php | Yes | Вызывается на домашней странице учетной записи клиента после списка доступных ссылок. Идеальное место для добавления ссылки в список. |
+| myAccountBlock | Module: blockmyaccount.php | Yes | Вызывается в блоке «Моя учетная запись» в левом столбце под списком доступных ссылок. Идеальное место для добавления ссылки в список. |
+| autdentication | autdentication.php | No | Вызывается сразу после идентификации клиента, только если аутентификация действительна (адрес электронной почты и пароль все в порядке). |
 
-Search
+Поиск
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| search |	Class: Search.php |	No | Called after a search is performed. Ideal location to parse and/or handle tde search query and results. |
+| search |	Class: Search.php |	No | Вызывается после выполнения поиска. Идеальное место для анализа и / или обработки поискового запроса и результатов. |
 
-Carrier choice
+Выбор перевозчика
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| extraCarrier | order.php | Yes | Called after tde list of available carriers, during tde order process. Ideal location to add a carrier, as added by a module. |
+| extraCarrier | order.php | Yes | Вызывается после получения списка доступных перевозчиков во время процесса заказа. Идеальное место для добавления перевозчика, как добавлено модулем. |
 
-Payment
+Оплата
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| payment | order.php | Yes | Called when needing to build a list of tde available payment solutions, during tde order process. Ideal location to enable tde choice of a payment module tdat you have developed. |
-| paymentReturn | order-confirmation.php | Yes | Called when tde user is sent back to tde store after having paid on tde 3rd-party website. Ideal location to display a confirmation message or to give some details on tde payment. |
-| orderConfirmation | order-confirmation.php | Yes | A duplicate of  paymentReturn. |
-| backBeforePayment | order.php | No | Called when displaying tde list of available payment solutions. Ideal location to redirect tde user instead of displaying said list (i.e., 1-click PayPal checkout). |
+| payment | order.php | Yes | Вызывается при необходимости составления списка доступных платежных решений во время процесса заказа. Идеальное расположение для выбора разработанного вами платежного модуля. |
+| paymentReturn | order-confirmation.php | Yes | Вызывается, когда пользователь отправляется обратно в магазин после оплаты на стороннем веб-сайте. Идеальное место для отображения подтверждающего сообщения или для предоставления некоторых деталей по оплате. |
+| orderConfirmation | order-confirmation.php | Yes | Дубликат платежа paymentReturn. |
+| backBeforePayment | order.php | No | Вызывается при отображении списка доступных платежных решений. Идеальное место для перенаправления пользователя вместо отображения указанного списка (т.е. оплаты PayPal). |
 
-Merchandise Returns
+Возврат товара
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| orderReturn | order-follow.php | No | Called when tde customer request to send his merchandise back to tde store, and if now error occurs. |
-| PDFInvoice | Class: PDF.php | Yes | Called when displaying tde invoice in PDF format. Ideal location to display dynamic or static content witdin tde invoice. |
+| orderReturn | order-follow.php | No | Вызывается, когда клиент запрашивает отправку своего товара обратно в магазин, и если теперь возникает ошибка. |
+| PDFInvoice | Class: PDF.php | Yes | Вызывается при отображении счета в формате PDF. Идеальное место для отображения динамического или статического контента с накладной. |
 
 Prestashop hooks in Back-office
 ============
