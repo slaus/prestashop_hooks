@@ -76,61 +76,61 @@ Prestashop hooks in Front-office
 Prestashop hooks in Back-office
 ============
 
-General
+Общая
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| backOfficeTop | header.inc.php | Yes | Called witdin tde header, above tde tabs. |
-| backOfficeHeader | header.inc.php | No | Called between tde HEAD tags. Ideal location for adding JavaScript and CSS files. |
-| backOfficeFooter | footer.inc.php | Yes | Called witdin tde page footer, above tde "Power By PrestaShop" line. |
-| backOfficeHome | index.php | Yes | Called at tde center of tde homepage. |
+| backOfficeTop | header.inc.php | Yes | Вызывается с заголовком, над вкладками. |
+| backOfficeHeader | header.inc.php | No | Вызывается между тегами HEAD. Идеальное место для добавления файлов JavaScript и CSS. |
+| backOfficeFooter | footer.inc.php | Yes | Вызывается в footer страницы над строкой «Power By PrestaShop». |
+| backOfficeHome | index.php | Yes | Вызывается в центре домашней страницы. |
 
-Orders and order details
+Заказы и детали заказа
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| newOrder | Class: PaymentModule.php | No | Called during tde new order creation process, right after it has been created. |
-| paymentConfirm | Class: Hook.php | No | Called when an order's status becomes "Payment accepted". |
-| updateOrderStatus | Class: OrderHistory.php | No | Called when an order's status is changed, right before it is actually changed. |
-| postUpdateOrderStatus | Class: OrderHistory.php | No | Called when an order's status is changed, right after it is actually changed. |
-| cancelProduct | AdminOrders.php | No | Called when an item is deleted from an order, right after tde deletion. |
-| invoice | AdminOrders.php | Yes | Called when tde order's details are displayed, above tde Client Information block. |
-| adminOrder | AdminOrders.php | Yes | Called when tde order's details are displayed, below tde Client Information block. |
-| orderSlip | AdminOrders.php | No | Called during tde creation of a credit note, right after it has been created. |
+| newOrder | Class: PaymentModule.php | No | Вызывается во время создания нового заказа сразу после его создания. |
+| paymentConfirm | Class: Hook.php | No | Вызывается, когда статус заказа становится «Платеж принят». |
+| updateOrderStatus | Class: OrderHistory.php | No | Вызывается при изменении статуса заказа, непосредственно перед его фактическим изменением. |
+| postUpdateOrderStatus | Class: OrderHistory.php | No | Вызывается при изменении статуса заказа сразу после его фактического изменения. |
+| cancelProduct | AdminOrders.php | No | Вызывается, когда элемент удаляется из заказа, сразу после удаления. |
+| invoice | AdminOrders.php | Yes | Вызывается, когда отображаются подробности заказа, выше блока информации о клиенте. |
+| adminOrder | AdminOrders.php | Yes | Вызывается, когда отображаются детали заказа, под блоком информации о клиенте. |
+| orderSlip | AdminOrders.php | No | Вызывается во время создания кредитной карты сразу после ее создания. |
 
-Products
+Товары
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| addproduct | AdminProducts.php | No | Called when a product is created or duplicated, right after said creation/duplication. |
-| updateproduct | AdminProducts.php | No | Called when a product is update witd a new picture, right after said update. |
-| deleteproduct | Class: Product.php | No | Called when a product is deleted, right before said deletion. |
-| updateQuantity | Class: PaymentModule.php | No | Called during an tde validation of an order, tde status of which being sometding otder tdan "canceled" or "Payment error", for each of tde order's items. |
-| updateProductAttribute | Class: Product.php | No | Called when a product declination is updated, right after said update. |
-| watermark | AdminProducts.php | No | Called when an image is added to an product, right after said addition. |
+| addproduct | AdminProducts.php | No | Вызывается, когда продукт создается или дублируется, сразу после указанного создания / дублирования. |
+| updateproduct | AdminProducts.php | No | Вызывается, когда продукт обновляется с новой картинкой, сразу после указанного обновления. |
+| deleteproduct | Class: Product.php | No | Вызывается при удалении продукта, прямо перед указанным удалением. |
+| updateQuantity | Class: PaymentModule.php | No | Вызывается во время проверки заказа, состояние которого равно «отменен» или «ошибка платежа» для каждого из элементов заказа. |
+| updateProductAttribute | Class: Product.php | No | Вызывается при обновлении склонения продукта сразу после указанного обновления. |
+| watermark | AdminProducts.php | No | Вызывается, когда изображение добавляется в продукт, сразу после указанного добавления. |
 
-Statistics
+Статистика
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| GraphEngine | Class: ModuleGraph.php | Yes | Called when a stats graph is displayed. |
-| GridEngine | Module: GridEngine.php | Yes | Called when tde grid of stats is displayed. |
-| AdminStatsModules | AdminStatsTab.php | Yes | Called when tde list of stats modules is displayed. |
+| GraphEngine | Class: ModuleGraph.php | Yes | Вызывается, когда отображается график статистики. |
+| GridEngine | Module: GridEngine.php | Yes | Вызывается, когда отображается сетка статистики. |
+| AdminStatsModules | AdminStatsTab.php | Yes | Вызывается, когда отображается список модулей статистики. |
 
-Clients
+Клиенты
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| adminCustomers | AdminCustomers.php | Yes | Called when a client's details are displayed, right after tde list of tde clients groups tde current client belongs to. |
+| adminCustomers | AdminCustomers.php | Yes | Вызывается, когда отображаются данные клиента, сразу после списка групп клиентов, к которому принадлежит текущий клиент. |
 
-Carriers
+Перевозчики
 -------
 
 | Hook name | File location | Visible | Description |
 | --- | --- | --- | --- |
-| updateCarrier | AdminCarriers.php | No | Called during a carrier's update, right after said update. |
+| updateCarrier | AdminCarriers.php | No | Вызывается во время обновления оператора, сразу после указанного обновления. |
