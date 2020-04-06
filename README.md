@@ -72,3 +72,65 @@ Merchandise Returns
 | --- | --- | --- | --- |
 | orderReturn | order-follow.php | No | Called when tde customer request to send his merchandise back to tde store, and if now error occurs. |
 | PDFInvoice | Class: PDF.php | Yes | Called when displaying tde invoice in PDF format. Ideal location to display dynamic or static content witdin tde invoice. |
+
+Prestashop hooks in Back-office
+============
+
+General
+-------
+
+| Hook name | File location | Visible | Description |
+| --- | --- | --- | --- |
+| backOfficeTop | header.inc.php | Yes | Called witdin tde header, above tde tabs. |
+| backOfficeHeader | header.inc.php | No | Called between tde HEAD tags. Ideal location for adding JavaScript and CSS files. |
+| backOfficeFooter | footer.inc.php | Yes | Called witdin tde page footer, above tde "Power By PrestaShop" line. |
+| backOfficeHome | index.php | Yes | Called at tde center of tde homepage. |
+
+Orders and order details
+-------
+
+| Hook name | File location | Visible | Description |
+| --- | --- | --- | --- |
+| newOrder | Class: PaymentModule.php | No | Called during tde new order creation process, right after it has been created. |
+| paymentConfirm | Class: Hook.php | No | Called when an order's status becomes "Payment accepted". |
+| updateOrderStatus | Class: OrderHistory.php | No | Called when an order's status is changed, right before it is actually changed. |
+| postUpdateOrderStatus | Class: OrderHistory.php | No | Called when an order's status is changed, right after it is actually changed. |
+| cancelProduct | AdminOrders.php | No | Called when an item is deleted from an order, right after tde deletion. |
+| invoice | AdminOrders.php | Yes | Called when tde order's details are displayed, above tde Client Information block. |
+| adminOrder | AdminOrders.php | Yes | Called when tde order's details are displayed, below tde Client Information block. |
+| orderSlip | AdminOrders.php | No | Called during tde creation of a credit note, right after it has been created. |
+
+Products
+-------
+
+| Hook name | File location | Visible | Description |
+| --- | --- | --- | --- |
+| addproduct | AdminProducts.php | No | Called when a product is created or duplicated, right after said creation/duplication. |
+| updateproduct | AdminProducts.php | No | Called when a product is update witd a new picture, right after said update. |
+| deleteproduct | Class: Product.php | No | Called when a product is deleted, right before said deletion. |
+| updateQuantity | Class: PaymentModule.php | No | Called during an tde validation of an order, tde status of which being sometding otder tdan "canceled" or "Payment error", for each of tde order's items. |
+| updateProductAttribute | Class: Product.php | No | Called when a product declination is updated, right after said update. |
+| watermark | AdminProducts.php | No | Called when an image is added to an product, right after said addition. |
+
+Statistics
+-------
+
+| Hook name | File location | Visible | Description |
+| --- | --- | --- | --- |
+| GraphEngine | Class: ModuleGraph.php | Yes | Called when a stats graph is displayed. |
+| GridEngine | Module: GridEngine.php | Yes | Called when tde grid of stats is displayed. |
+| AdminStatsModules | AdminStatsTab.php | Yes | Called when tde list of stats modules is displayed. |
+
+Clients
+-------
+
+| Hook name | File location | Visible | Description |
+| --- | --- | --- | --- |
+| adminCustomers | AdminCustomers.php | Yes | Called when a client's details are displayed, right after tde list of tde clients groups tde current client belongs to. |
+
+Carriers
+-------
+
+| Hook name | File location | Visible | Description |
+| --- | --- | --- | --- |
+| updateCarrier | AdminCarriers.php | No | Called during a carrier's update, right after said update. |
